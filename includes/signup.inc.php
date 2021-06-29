@@ -2,31 +2,25 @@
 
 if (isset($_POST["submit"])) {
 
-//echo "string";
   $name = $_POST["name"];
   $email = $_POST["email"];
   $username = $_POST["uid"];
   $pwd = $_POST["pwd"];
   $pwdRepeat = $_POST["pwdrepeat"];
-//echo $name." ".$email." ";
-try {
-  require_once "functions.inc.php";
 
-} catch (Error $e) {
-  echo "require function Inc Error!: " . $e->getMessage();
-}
-
-  //require_once "functions.inc.php";
-//  require_once "dbh.inc.php";
-echo " after require".$name." ".$email." ";
   try {
-    include_once 'classes/usersView.class.php';
+    require_once "functions.inc.php";
 
   } catch (Error $e) {
-    echo "function Inc Error!: " . $e->getMessage();
+    echo "require function Inc Error!: " . $e->getMessage();
   }
 
-  //require_once "dbh.inc.php";
+  // try {
+  //   include_once 'classes/usersView.class.php';
+  //
+  // } catch (Error $e) {
+  //   echo "function Inc Error!: " . $e->getMessage();
+  // }
 
   if (emptyInputsSignup($name, $email, $username, $pwd, $pwdRepeat) !== false) {
    header('location: /singup.php?error=emptyinput');
