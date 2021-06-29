@@ -1,6 +1,6 @@
 <?php
 try {
-  include_once 'users.class.php';
+  include_once 'classAutoload.inc.php';
 
 } catch (Error $e) {
   echo "user view Error!: " . $e->getMessage();

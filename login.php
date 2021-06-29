@@ -2,8 +2,6 @@
   include_once 'header.php';
 ?>
 <main>
-  <!-- <div class="cards">
-    <div class="card-single"> -->
       <div class="container">
         <h2>Login to your Account</h2>
         <form class="" action='includes/login.inc.php' method="post">
@@ -13,16 +11,6 @@
 
         </form>
       </div>
-      <!-- <section class="search-wrapper">
-        <h2>Log in</h2>
-        <form  action='includes/login.inc.php' method="post">
-          <input type="text" name="uid" placeholder="User Name/Email ..">
-          <input type="password" name="pwd" placeholder="password ..">
-         <button type="submit" name="submit">Log in</button>
-        </form>
-      </section> -->
-    <!-- </div>
-  </div> -->
   <?php
    if (isset($_GET["error"])) {
      if ($_GET["error"] == "emptyinput") {

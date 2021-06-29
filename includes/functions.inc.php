@@ -1,13 +1,16 @@
 <?php
 try {
+  //including class file
+  include_once 'classAutoload.inc.php';
 
-  include '../classes/usersView.class.php';
-  include '../classes/usersController.class.php';
+  // include '../classes/usersView.class.php';
+  // include '../classes/usersController.class.php';
 }
 catch (Error $e) {
   echo "function connecting Error!: " . $e->getMessage();
 }
 
+// checking empty sign up field
 function emptyInputsSignup($name, $email, $username, $pwd, $pwdRepeat){
   $result;
   if (empty($name) || empty($email) || empty($username) || empty($pwd) || empty($pwdRepeat)) {
@@ -20,6 +23,7 @@ function emptyInputsSignup($name, $email, $username, $pwd, $pwdRepeat){
   return $result;
 }
 
+// checking invalid user id
 function invalidUid($username){
   $result;
   if (!preg_match("/^[a-zA-z0-9]*$/", $username)) {
@@ -42,6 +46,8 @@ function invalidEmail($email){
 
   return $result;
 }
+
+//checking is password and  repeat password matched
 function pwdMatch($pwd, $pwdRepeat){
   $result;
   if ($pwd !== $pwdRepeat) {
@@ -54,6 +60,7 @@ function pwdMatch($pwd, $pwdRepeat){
   return $result;
 }
 
+//checking if user Id or user email exists
 function uidExists($username, $email){
    try {
      $obj = new UsersView();
@@ -71,7 +78,7 @@ function uidExists($username, $email){
    }
 }
 
-
+//creating user
 function createUser($name, $email, $username, $pwd){
   try {
     $hashedPwd = password_hash($pwd, PASSWORD_DEFAULT);
@@ -90,6 +97,7 @@ function createUser($name, $email, $username, $pwd){
 
 //log in functions
 
+//checking emptu input login form field
 function emptyInputsLogin($username, $pwd){
   $result;
   if (empty($username) || empty($pwd)) {
@@ -102,7 +110,10 @@ function emptyInputsLogin($username, $pwd){
   return $result;
 }
 
+// Logged in user 
 function loginUser($username, $pwd){
+//  echo "   whats wrong??  ";
+
   $uidExists = uidExists($username, $username);
 
   if ($uidExists === false) {
