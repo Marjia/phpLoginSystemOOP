@@ -1,0 +1,146 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* body {
+  margin: 0;
+  font-family: "Noto Sans JP", sans-serif;
+  line-height: 1.6;
+  height: 100%;
+} */
+
+body{
+   /* background:white; */
+   margin:0px;
+   padding:0px;
+   height:100%;
+   font-family: 'Open Sans', sans-serif;
+   overflow:hidden;
+}
+
+img {
+  max-width: 100%;
+  height: 100%;
+  display: block;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+header{
+ overflow:hidden;
+ background-color:#262626;
+ width: 100%;
+ height: 70px;
+ padding-top: 0px;
+ padding-left: 10px;
+ padding-right: 10px;
+ padding-bottom: 10px;
+ margin-bottom:50px;
+}
+nav>a{
+ float:right;
+ text-decoration:none;
+ color:white;
+ font-size:18px;
+ padding: 22px 30px;
+ width:90px;
+ display: inline-flex;
+ transition: all 0.5s ease 0s;
+}
+nav{
+   text-align:center;
+}
+
+
+.main-content{
+  margin: 20px;
+  float: center;
+}
+main{
+  margin-top: 85px;
+  padding: 4rem 4rem;
+  background: #f1f5f9;
+  min-height: calc(100vh - 345px);
+}
+.cards{
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 2rem;
+
+  margin-top: 1rem;
+}
+.card-single{
+  display: flex;
+  justify-content: space-between;
+  background: #fff;
+  color: black;
+  padding: 2rem;
+  width: auto;
+  padding: 50px;
+  border-radius: 2px;
+  float: center;
+}
+
+.container{
+  max-width: 500px;
+  width: 100%;
+  background: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+form{
+  padding: 30px;
+}
+h2{
+  color: #fff;
+  font-family: monospace;
+  font-size: 24px;
+  background: #262626;
+  padding: 15px 29px;
+  border: 1px solid #000;
+  font-weight: 200;
+  text-align: center;
+}
+input{
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  margin-bottom: 2em;
+  padding: 4px;
+  border: none;
+  font-size: 14px;
+  border-bottom: 1px solid #eaeaea;
+  padding-bottom: 1.25em;
+  color: #000;
+  
+}
+input:focus{
+  outline: none;
+}
+.button{
+  background: #1fb5f5;
+  border: 1px solid #1fb5f5;
+  padding: .5em 2em;
+  color: #fff;
+  margin-right: .5em;
+}
+.button:hover{
+  cursor: pointer;
+}
+.button:active{
+  background: #1fb5f5;
+  box-shadow: inset 0px 1px 1px #000;
+}
+.button:focus{
+  outline: none;
+}
